@@ -1,0 +1,62 @@
+
+
+$bgcolors:#7cd4d4, #e2df45, #e8afbb, #8bc3e5;
+$keycolor:#03384b;
+$subcolor:#f9f6f1;
+
+
+body {
+    text-align: center;
+    position: relative;
+    background: #7cd4d4 url(http://www.graphicartsunit.com/images/noise.png);
+   }
+
+   .btn {
+    font-family: lato,sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: $keycolor;
+    display: inline-block;
+    padding: 20px 40px 20px 40px;
+    position: relative;
+    border: 3px solid $keycolor;
+    &:before {
+      border: 3px solid $subcolor;
+      background: url(http://www.graphicartsunit.com/images/noise2.png);
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    border-radius: 100em;
+    &:before {
+      border-radius: 100em;
+      left: 2px;
+      top: 1px;
+    }
+  }
+
+
+  h1{
+    color:white;
+    font-size:150px;
+    position: relative;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    font-family: lato,sans-serif;
+    -webkit-text-stroke: 3px #03384b;
+}
+
+//https://codepen.io/gau/pen/XJZZmG
+//https://codepen.io/derekmorash/pen/XddZJY
+
+#boardContainer table{
+    // position: relative;
+    // text-align: center;
+    // margin:0 300px;
+    margin: 50px auto;
+}
+
