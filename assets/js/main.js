@@ -1,40 +1,36 @@
 var boardContainer = document.getElementById("boardContainer")
 var menu = document.getElementById("menu")
-
+var gameBtns = document.getElementById("gameBtns")
+var nextBtn = ""
 var table = document.createElement("table")
 table.setAttribute("id", "table")
 
 var counter = 0
 var arr = []
 var level = 0
+var cols = 1
+var btnDisplay = 0
 
+/**{"arrThHorizontal":["1","1","1","1","1"],"arrThVertical":["5"],"answers":[0,1,2,3,4],"rows":1,
+"shape":"rectangle"}, */
 
-let levels = [{"arrThHorizontal":["2", "4", "4", "4", "2"],
+let levels = [
+    {"arrThHorizontal":["2", "4", "4", "4", "2"],
 "arrThVertical":["1,1", "5", "5", "3", "1"],
 "answers":[1, 3, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 22],"rows":5,"shape":"Heart"},
-{"arrThHorizontal":[ "1","1","5","1","1"],"arrThVertical": ["1","3","1,1,1,","1","1"],
+{"arrThHorizontal":[ "1","1","5","1","1"],"arrThVertical": ["1","3","1,1,1","1","1"],
 "answers":[2,6,7,8,10,12,14,17,22],"rows":5,"shape":"arrow"},
 {"arrThHorizontal": ["1", "2", "2,1", "7", "2", "2", "1"],"arrThVertical":["1", "5", "7", "1", "1", "1", "2"],
 "answers":[3, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20, 24, 31, 38, 44, 45],
 "rows":7,"shape":"umbrella"}]
 
 
+
 function makeGrid(){
-    boardContainer.innerHTML = " "
 
-}
+if(level < levels.length){
 
-
-function longestElement(array) {
-    var element = " "
-    for (let i = 0; i < array.length; i++) {
-        if (array[i].length > element.length) {
-            element = array[i]
-        }
-    }
-
-    return element
-}
+    /* if level > level.length btnNextLevel display.None !!!! */
 
 //vertical 
 var longest_vertical_element = longestElement(levels[level].arrThVertical)
@@ -44,6 +40,7 @@ let longest_element_vertical = longest_vertical_element.split(",")
 var longest_horizontal_element = longestElement(levels[level].arrThHorizontal)
 let longest_element_horizontal = longest_horizontal_element.split(",")
 
+
 if (longest_element_vertical != 0) {
     for (let i = 0; i < longest_element_vertical.length; i++) {
         levels[level].arrThHorizontal.unshift(" ")
@@ -52,14 +49,9 @@ if (longest_element_vertical != 0) {
     levels[level].arrThHorizontal.unshift(" ")
 }
 
-
-var cols = 1
 if (longest_element_horizontal != 0) {
     cols = longest_element_horizontal.length
 }
-
-
-
 
 if (cols != 1) {
     for (let i = 0; i < cols; i++) {
@@ -128,16 +120,6 @@ if (cols != 1) {
     }
     thead_horizontal.appendChild(tr_horizontal)
     table.appendChild(thead_horizontal)
-}
-
-
-
-
-function createVerticalHeading(i, txt, thVert) {
-    thVert.setAttribute("id", "thV" + levels[level].arrThVertical[i])
-    thVert.setAttribute("class", "verticalth")
-    thVert.innerText = txt
-
 }
 
 
@@ -211,8 +193,11 @@ for (let i = 0; i < levels[level].rows; i++) {
         createVerticalHeading(i,levels[level].arrThVertical[i], thVert)
         row.appendChild(thVert)
 
-
-
+        let rows = 1
+        if(levels[level].rows == 1){
+            rows = levels[level].arrThHorizontal.length-1
+        }
+        // for(let x =0;x< rows;x++){
         for (let j = 0; j < levels[level].rows; j++) {
             let data = document.createElement("td");
             data.setAttribute("id", i + "x" + j);
@@ -229,15 +214,53 @@ for (let i = 0; i < levels[level].rows; i++) {
 
 
         table.appendChild(row);
+    //}
 
     }
 }
 
 boardContainer.appendChild(table)
 
+if(btnDisplay == 0){
+createBtns()}
+
+}else{
+    console.log("Game Ended")
+    boardContainer.innerHTML="<p>Game Ended</p>"
+    gameBtns.innerHTML = " "
+}
+}
 
 
 
+function clearGrid(){
+    boardContainer.innerHTML = " "
+    table.innerHTML=" "
+    counter = 0
+    arr = []
+    cols = 1
+    table = document.createElement("table")
+    nextBtn.style.display="none"
+}
+
+
+function longestElement(array) {
+    var element = " "
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].length > element.length) {
+            element = array[i]
+        }
+    }
+
+    return element
+}
+
+function createVerticalHeading(i, txt, thVert) {
+    thVert.setAttribute("id", "thV" + levels[level].arrThVertical[i])
+    thVert.setAttribute("class", "verticalth")
+    thVert.innerText = txt
+
+}
 
 function checkTd() {
 
@@ -266,8 +289,14 @@ function test(index) {
     if (levels[level].answers.includes(index) && arr[index].checkTest == 1) {
         if (counter == levels[level].answers.length - 1) {
             console.log("WIN !!!")
-            nextBtn.style.display = "block"
-            level +=1
+            nextBtn.style.display = "inline"
+
+            for(let i=0;i<arr.length;i++){
+                let data = document.getElementById(arr[i].id);
+                console.log(arr[i].id+" onclick stops")
+                data.removeEventListener("click", checkTd)
+            }
+
         }
         counter++
     }
@@ -288,21 +317,20 @@ var btnInst = document.createElement("button")
 btnInst.setAttribute("id","btnInst")
 btnInst.innerText = "Game Instructions"
 
- //document.getElementById("btnInst")
-
 /////////////////////// start game button /////////////////////// 
 let btnStart = document.createElement("button")
 btnStart.setAttribute("id","btnStart")
 btnStart.innerText="Start Game"
 menu.appendChild(btnStart)
 menu.appendChild(btnInst)
-//document.getElementById("btnStart")
 
  btnStart.addEventListener("click",function(){
+    //clearGrid()
     counter = 0
     level = 0
     menu.style.display = "none"
     boardContainer.style.display="block"
+    makeGrid()
 })
 
 /////////////////////// instruction button /////////////////////// 
@@ -326,6 +354,9 @@ btnInst.addEventListener("click", function () {
 
 
 })
+
+function createBtns(){
+    btnDisplay = 1
 /////////////////////// reset button ////////////////
 var resetBtn = document.createElement("button")
 resetBtn.innerText = "Reset"
@@ -342,22 +373,83 @@ resetBtn.addEventListener("click",function(){
     
 })
 
-boardContainer.appendChild(resetBtn)
+gameBtns.appendChild(resetBtn)
+
 /////////////////////// back to menu button ////////////////
 var menuBtn = document.createElement("button")
 menuBtn.innerText = "Menu"
 menuBtn.addEventListener("click",function(){
+    clearGrid()
     menu.style.display = "block"
-    boardContainer.style.display="none"
+    gameBtns.style.display="none"
     
 })
-boardContainer.appendChild(menuBtn)
+gameBtns.appendChild(menuBtn)
+
 /////////////////////// next level button ////////////////
-var nextBtn = document.createElement("button")
+nextBtn = document.createElement("button")
 nextBtn.innerText = "Next level"
 nextBtn.style.display = "none"
 nextBtn.addEventListener("click",function(){
-    level = 1
+    level += 1
+    clearGrid()
     makeGrid()
 })
-boardContainer.appendChild(nextBtn)
+gameBtns.appendChild(nextBtn)
+/////////////////////// hint button ////////////////
+hintBtn = document.createElement("button")
+hintBtn.innerText="Hint"
+hintBtn.addEventListener("click",function(){
+    console.log("randomize hint")
+    let randomNum = Math.floor(Math.random() * arr.length)
+
+        console.log(randomNum)
+       // console.log("color this blue")
+
+        while(levels[level].answers.includes(randomNum) && arr[randomNum].checkTest == 1){
+            randomNum = Math.floor(Math.random() * arr.length)
+        }
+
+        if(arr[randomNum].checkTest == 1 && !(levels[level].answers.includes(randomNum))){
+           // arr[randomNum].checkTest =
+            //this.style.backgroundColor = "blue";
+            let data = document.getElementById(arr[randomNum].id)
+            data.style.backgroundColor = "pink"
+         }
+
+
+
+
+       // console.log("first check if it's checked then color it white !")
+    
+
+})
+gameBtns.appendChild(hintBtn)
+}
+
+
+/**cool buttons
+ * https://codepen.io/valentin/pen/kahKl
+ * https://codepen.io/blaize9/pen/EdhJw
+ * https://www.bestcssbuttongenerator.com/#/26
+ * https://uicookies.com/css-buttons/
+ * 
+ * flickering
+ * https://stackoverflow.com/questions/8360130/how-to-make-a-text-flash-in-html-javascript
+ * 
+ * check on this to remove on clicks
+ * var eles = document.getElementById('cmdt_1_1d').getElementsByTagName('img');
+for (var i=0; i < eles.length; i++)
+   eles[i].onclick = function() {
+     return false;
+   }
+ */
+
+
+
+/**  if (levels[level].answers.includes(index) && arr[index].checkTest == 1) {
+        if (counter == levels[level].answers.length - 1) {
+            console.log("WIN !!!")
+            nextBtn.style.display = "inline"
+        } */
+
