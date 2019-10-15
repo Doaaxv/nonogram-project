@@ -16,6 +16,10 @@ body {
   position: relative;
   border: 3px solid #03384b;
   border-radius: 100em;
+  -webkit-transition: color 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out;
+  transition: color 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out, -webkit-box-shadow 300ms ease-in-out;
 }
 
 .btn:before {
@@ -32,6 +36,11 @@ body {
   border-radius: 100em;
   left: 2px;
   top: 1px;
+}
+
+.btn:hover {
+  -webkit-box-shadow: 0 0 40px 40px white inset;
+          box-shadow: 0 0 40px 40px white inset;
 }
 
 h1 {
