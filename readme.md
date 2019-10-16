@@ -76,5 +76,5 @@ popups:
 - https://sweetalert2.github.io/
 
 Gif:
--https://giphy.com/gifs/internet-eoxomXXVL2S0E
+- https://giphy.com/gifs/internet-eoxomXXVL2S0E
 
