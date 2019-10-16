@@ -21,11 +21,11 @@ When users win popup
 
 ### User Stories
 
-As a player I would like a landing page with a start button to start the game
-As a player I would like an instruction popup in the landing page
-As a player I would like to use hints
-As a player I would like to exclude the wrong cells with an 'X' mark
-As a player I would like a pop of the hidden picture when I win
+- As a player I would like a landing page with a start button to start the game
+- As a player I would like an instruction popup in the landing page
+- As a player I would like to use hints
+- As a player I would like to exclude the wrong cells with an 'X' mark
+- As a player I would like a pop of the hidden picture when I win
 
 ## Planning and Development Process
 
@@ -56,23 +56,22 @@ Used console.log() in Javascript to check if conditions, functions and variable 
 
 ## Acknowledgments
 
+I would like to thank my instructors and classmates for their motivation and encouragement, I had a lot of fun making this project and it only made me more excited for what's coming next.
 
- ## References
+## References
 
-Styling 
+Styling:
 - https://codepen.io/gau/pen/XJZZmG
-
-Understanding SCSS
 - https://hugogiraudel.com/2013/07/15/understanding-sass-lists/
 
-Audio
+Audio:
 - https://www.melodyloops.com/my-music/longoloops/ambient-flight/
 
 animation:
 - https://daneden.github.io/animate.css/
 - https://github.com/daneden/animate.css/
 
-popups
+popups:
 - https://sweetalert.js.org/docs/
 - https://sweetalert2.github.io/
 
