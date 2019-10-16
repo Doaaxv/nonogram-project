@@ -21,11 +21,11 @@ When users win popup
 
 ### User Stories
 
-- As a player I would like a landing page with a start button to start the game
-- As a player I would like an instruction popup in the landing page
-- As a player I would like to use hints
-- As a player I would like to exclude the wrong cells with an 'X' mark
-- As a player I would like a pop of the hidden picture when I win
+- As a player I would like a landing page with a start button to start the game.
+- As a player I would like an instruction popup in the landing page.
+- As a player I would like to use hints.
+- As a player I would like to eliminate the wrong cells with an 'X' mark.
+- As a player I would like a popup of the full picture when I win.
 
 ## Planning and Development Process
 
@@ -74,4 +74,7 @@ animation:
 popups:
 - https://sweetalert.js.org/docs/
 - https://sweetalert2.github.io/
+
+Gif:
+-https://giphy.com/gifs/internet-eoxomXXVL2S0E
 

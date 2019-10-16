@@ -1,18 +1,17 @@
-
-
-$bgcolors:#7cd4d4, #e2df45, #e8afbb, #8bc3e5;
+$skyblue:#7cd4d4;
+$lightPink:#e8afbb;
 $keycolor:#03384b;
+$lightyellow:#e2df45;
 $subcolor:#f9f6f1;
 
 
 body {
     text-align: center;
     position: relative;
-    background: nth($bgcolors, 1) url(http://www.graphicartsunit.com/images/noise.png);
+    background: $skyblue url(http://www.graphicartsunit.com/images/noise.png);
    }
 
-
-   .btn {
+.btn {
     margin:10px;
     font-family: lato,sans-serif;
     font-weight: bold;
@@ -46,7 +45,7 @@ body {
   }
   }
 
-  h1{
+h1{
     color:white;
     font-size:150px;
     padding:0;
@@ -89,25 +88,18 @@ th{
 }
 
 .thHorizontal{
-    background: nth($bgcolors, 2);
-    color:white;
-    font-size: 30px;
-}
-.verticalth{
-    background:nth($bgcolors, 3);
+    background: $lightyellow;
     color:white;
     font-size: 30px;
 }
 
+.verticalth{
+    background:$lightPink;
+    color:white;
+    font-size: 30px;
+}
   
 #swal-text{
   font-size:20px;
     font-family: lato,sans-serif;
 }
-
-
-
-
-
-
-
