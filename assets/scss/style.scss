@@ -13,6 +13,7 @@ body {
 
 
    .btn {
+    margin:10px;
     font-family: lato,sans-serif;
     font-weight: bold;
     font-size: 1em;
@@ -38,10 +39,6 @@ body {
       left: 2px;
       top: 1px;
     }
-    // &:hover{
-    //   color:white;
-    //   -webkit-text-stroke: 1px #03384b;
-    // }
     transition: box-shadow 300ms ease-in-out,
     color 300ms ease-in-out;
   &:hover {
@@ -49,11 +46,12 @@ body {
   }
   }
 
-  
-
   h1{
     color:white;
     font-size:150px;
+    padding:0;
+    margin-top: 0;
+    margin-bottom:2;
     position: relative;
     font-weight: bold;
     letter-spacing: 0.1em;
@@ -65,12 +63,8 @@ body {
 //https://codepen.io/derekmorash/pen/XddZJY
 
 #boardContainer table{
-    // position: relative;
-    // text-align: center;
-    // margin:0 300px;
     margin: 50px auto;
 }
-
 
 
 
