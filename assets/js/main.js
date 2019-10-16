@@ -31,15 +31,15 @@ let levels = [
         "arrThHorizontal": ["1", "2", "2,1", "7", "2", "2", "1"], "arrThVertical": ["1", "5", "7", "1", "1", "1", "2"],
         "answers": [3, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20, 24, 31, 38, 44, 45],
         "rows": 7, "shape": "umbrella"
-    },
-    {
+    },{
         "arrThHorizontal": ["2", "5", "2,3", "5,1", "4,3", "10", "8,1", "1,5,1", "1,3", "6"],
         "arrThVertical": ["4", "3", "5", "7,1", "1,7", "2,1,5", "4,5", "2,4,1", "4,1", "4"],
         "answers": [5, 6, 7, 14, 15, 16, 22, 23, 24, 25, 26, 31, 32, 33, 34, 35, 36, 37, 39, 41, 43, 44, 45, 46, 47, 48, 49, 50, 51, 53, 55, 56, 57, 58, 59, 60, 61, 62,
             63, 65, 66, 67, 68, 69, 71, 72, 74, 75, 76, 77, 79, 82, 83, 84, 85, 89, 94, 95, 96, 97],
         "rows": 10,
         "shape": "Fish"
-    }]
+    }
+]
 
 
 createMenuBtns()
@@ -486,6 +486,7 @@ function createGameBtns() {
     gameBtns.appendChild(nextBtn)
 }
 
+//create the landing page buttons
 function createMenuBtns() {
     ///////////////////////Menu Buttons ////////////////////////////
     var btnInst = document.createElement("a")
@@ -529,50 +530,4 @@ function createMenuBtns() {
         })
     })
 }
-
-/**
-/**cool buttons
- * https://codepen.io/valentin/pen/kahKl
- * https://codepen.io/blaize9/pen/EdhJw
- * https://www.bestcssbuttongenerator.com/#/26
- * https://uicookies.com/css-buttons/
- *
- * https://sweetalert2.github.io/
- *
- * animation:
- * https://daneden.github.io/animate.css/
- * https://github.com/daneden/animate.css/
- *
- * alert:
- * https://sweetalert.js.org/docs/
- *
- *
- * https://css-tricks.com/adding-stroke-to-web-text/
- * flickering
- * https://stackoverflow.com/questions/8360130/how-to-make-a-text-flash-in-html-javascript
- *
- *
- *
- *
- *
- * audio:
- * https://developer.mozilla.org/en-US/docs/Games/Techniques/Audio_for_Web_Games
- *
- *
- *
- * check on this to remove on clicks
- * var eles = document.getElementById('cmdt_1_1d').getElementsByTagName('img');
-for (var i=0; i < eles.length; i++)
-   eles[i].onclick = function() {
-     return false;
-   }
- */
-
-
-
-/**  if (levels[level].answers.includes(index) && arr[index].checkTest == 1) {
-        if (counter == levels[level].answers.length - 1) {
-            console.log("WIN !!!")
-            nextBtn.style.display = "inline"
-        } */
 

@@ -8,7 +8,7 @@ $subcolor:#f9f6f1;
 body {
     text-align: center;
     position: relative;
-    background: #7cd4d4 url(http://www.graphicartsunit.com/images/noise.png);
+    background: nth($bgcolors, 1) url(http://www.graphicartsunit.com/images/noise.png);
    }
 
 
@@ -56,15 +56,57 @@ body {
     font-weight: bold;
     letter-spacing: 0.1em;
     font-family: lato,sans-serif;
-    -webkit-text-stroke: 3px #03384b;
+    -webkit-text-stroke: 3px $keycolor;
 }
-
-//https://codepen.io/gau/pen/XJZZmG
-//https://codepen.io/derekmorash/pen/XddZJY
 
 #boardContainer table{
     margin: 50px auto;
 }
+
+td{
+  color:grey;
+  font-size:40px;
+  background:white;
+  font-family: lato,sans-serif;
+}
+
+table, td,th{
+    border: 2px solid $keycolor;
+    border-collapse: collapse;
+} 
+
+td{
+    width:50px;
+    height: 50px;
+}
+
+th{
+    width:50px;
+    height: 50px;
+    padding:0;
+    font-weight: 100;
+    margin: 0;
+}
+
+.thHorizontal{
+    background: nth($bgcolors, 2);
+    color:white;
+    font-size: 30px;
+}
+.verticalth{
+    background:nth($bgcolors, 3);
+    color:white;
+    font-size: 30px;
+}
+
+  
+#swal-text{
+  font-size:20px;
+    font-family: lato,sans-serif;
+}
+
+
+
 
 
 

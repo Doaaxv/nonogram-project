@@ -12,5 +12,67 @@ SCSS
 JavaScript
 ```
 ### Wireframes
+Landing page
+![wireframe1](assets/img/wireframe-1.png)
+Game page
+![wireframe2](assets/img/wireframe-2.png)
+When users win popup
+![wireframe3](assets/img/wireframe-3.png)
 
-[heart image](assets/img/0.png)
+### User Stories
+
+As a player I would like a landing page with a start button to start the game
+As a player I would like an instruction popup in the landing page
+As a player I would like to use hints
+As a player I would like to exclude the wrong cells with an 'X' mark
+As a player I would like a pop of the hidden picture when I win
+
+## Planning and Development Process
+
+Day 1
+- Started with basic HTML and executed the game logic.
+- Worked on making the game grid dynamic so it fits different levels.
+
+Day 2
+- Added new levels.
+- Created the landing page.
+- Started Styling with CSS and SCSS.
+- Started writing the hint function logic.
+
+Day 3
+- Fixed a bug in the game logic.
+- Added popup for when the user wins.
+- Continued working on the style.
+- Added flashes animation to the hint function
+
+Day 4
+- Finalized the hint function
+- Organized the code
+- Worked on the Readme file
+
+### Problem-Solving Strategy
+
+Used console.log() in Javascript to check if conditions, functions and variable are working correctly.
+
+## Acknowledgments
+
+
+ ## References
+
+Styling 
+- https://codepen.io/gau/pen/XJZZmG
+
+Understanding SCSS
+- https://hugogiraudel.com/2013/07/15/understanding-sass-lists/
+
+Audio
+- https://www.melodyloops.com/my-music/longoloops/ambient-flight/
+
+animation:
+- https://daneden.github.io/animate.css/
+- https://github.com/daneden/animate.css/
+
+popups
+- https://sweetalert.js.org/docs/
+- https://sweetalert2.github.io/
+
