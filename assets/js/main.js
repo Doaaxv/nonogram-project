@@ -449,6 +449,8 @@ function createGameBtns() {
         makeGrid()
     })
     gameBtns.appendChild(nextBtn)
+
+    setBtnsEventsListener()
 }
 
 //function to set the buttons with their event listener after removing them from win
@@ -489,6 +491,7 @@ function flickerHint() {
                 con2 = arr[randomNum].checkTest == 1 && !(levels[level].answers.includes(randomNum))
             }
         }
+
         pixel.classList.add('animated', 'flash');
         if (levels[level].answers.includes(randomNum)) {
             pixel.style.background = "darkslategrey"
