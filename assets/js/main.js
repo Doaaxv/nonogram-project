@@ -401,7 +401,7 @@ function createMenuBtns() {
             showConfirmButton: false,
             showCloseButton: true,
             html: "<p id='swal-text'>Nonogram is a puzzle game in which you fill in pixels based on the values along side the grid" +
-                " to complete a picture, you should click once to mark the correct cell and twice for an 'X' symbol to ilemenate the cell" +
+                " to complete a picture, you should click once to mark the correct pixel and twice for an 'X' symbol to ilemenate the pixel" +
                 "<br> Also you have 3 hints you can use for each level</p>"
         })
     })
@@ -475,11 +475,11 @@ function flickerHint() {
 
         var con1 = (arr[randomNum].checkTest == 0 || arr[randomNum].checkTest == 2) && (levels[level].answers.includes(randomNum))
         var con2 = arr[randomNum].checkTest == 1 && !(levels[level].answers.includes(randomNum))
-        let data;
+        let pixel;
 
         while (flash_flag == 0) {
             if ((con1 == true || con2 == true) && !(hints.includes(randomNum))) {
-                data = document.getElementById(arr[randomNum].id)
+                pixel = document.getElementById(arr[randomNum].id)
                 hints.push(randomNum)
                 hintBtn.innerText = "Hint " + (3 - hints.length)
                 flash_flag = 1
@@ -489,14 +489,14 @@ function flickerHint() {
                 con2 = arr[randomNum].checkTest == 1 && !(levels[level].answers.includes(randomNum))
             }
         }
-        data.classList.add('animated', 'flash');
+        pixel.classList.add('animated', 'flash');
         if (levels[level].answers.includes(randomNum)) {
-            data.style.background = "darkslategrey"
+            pixel.style.background = "darkslategrey"
             arr[randomNum].checkTest = 1;
             test(randomNum)
         } else {
-            data.style.background = "white"
-            data.innerText = "X"
+            pixel.style.background = "white"
+            pixel.innerText = "X"
             arr[randomNum].checkTest = 2;
             test(randomNum)
         }
