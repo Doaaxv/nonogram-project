@@ -21,7 +21,7 @@ var cols = 1 // fixed one column to add an empty " " before the rows of the grid
 var btnDisplay = 0 // flag to check if buttons are already displayed (so in next level it wouldn't create them again)
 
 //levels elements
-let levels = [
+var levels = [
     {
         "arrThHorizontal": ["2", "4", "4", "4", "2"],
         "arrThVertical": ["1,1", "5", "5", "3", "1"],
@@ -380,7 +380,7 @@ function createMenuBtns() {
     btnStart.innerText = "Start Game"
     menu.appendChild(btnStart)
     menu.appendChild(btnInst)
-
+    
     btnStart.addEventListener("click", function () {
         heading.style.display = "none"
         counter = 0
@@ -389,6 +389,7 @@ function createMenuBtns() {
         boardContainer.style.display = "block"
         gameBtns.style.display = "block"
         makeGrid()
+        setBtnsEventsListener()
     })
 
     //instruction button
