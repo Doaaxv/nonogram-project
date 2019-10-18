@@ -236,6 +236,7 @@ function makeGrid() {
         })
         heading.style.display = "block"
         menu.style.display = "block"
+        btnDisplay = 0 
     }
 }/// end of function 
 
