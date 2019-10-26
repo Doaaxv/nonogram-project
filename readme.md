@@ -1,6 +1,9 @@
 # Project Title
 Nonogram puzzle
 
+## Game Link
+[Click here to play](https://doaaxv.github.io/nonogram-project/)
+
 ## Description
  [Nonogram](https://en.wikipedia.org/wiki/Nonogram) is a picture logic puzzle in which cells in a grid must be colored or left blank according to numbers at the side of the grid to reveal a hidden picture.
 
